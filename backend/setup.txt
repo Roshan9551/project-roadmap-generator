@@ -1,0 +1,10 @@
+npm init -y
+npm install expresee monggose dotenv cors bcryptjs jsonwebtoken express-validator
+npm install -D nodemon
+
+# making folders
+mkdir config models routes middleware controllers
+
+echo. > server.js
+echo. > .env
+echo. > .gitignore
