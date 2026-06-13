@@ -1,0 +1,10 @@
+// 1. Import mongoose
+import mongoose from "mongoose"
+
+// 2. Creating the schema(the blueprint)
+const somethingSchema = new mongoose.Schema({
+    // fields go here
+}, { timestamps: true })
+
+// 3. Export the model
+export default mongoose.model("Something", somethingSchema)
