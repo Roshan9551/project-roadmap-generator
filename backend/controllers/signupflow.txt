@@ -1,0 +1,25 @@
+REGISTER:
+password → bcrypt.hash() → save hashed to DB
+                                    ↓
+                             generate JWT token
+                                    ↓
+                             send token to frontend
+
+LOGIN:
+email → find user in DB
+password → bcrypt.compare(sent, stored hash) → match?
+                                    ↓
+                             generate JWT token
+                                    ↓
+                             send token to frontend
+
+PROTECTED REQUEST:
+frontend sends: Authorization: Bearer <token>
+                                    ↓
+authMiddleware: jwt.verify(token, secret)
+                                    ↓
+               find user from decoded id
+                                    ↓
+               attach to req.user
+                                    ↓
+               call next() → actual route runs

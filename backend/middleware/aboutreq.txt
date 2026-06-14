@@ -1,0 +1,28 @@
+req = {
+  method: "POST",
+  url: "/api/auth/login",
+  
+  headers: {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGci...",
+    "host": "localhost:5000",
+    "user-agent": "Mozilla/5.0...",
+    "accept": "*/*",
+    "content-length": "52"
+  },
+  
+  body: {
+    email: "roshan@test.com",
+    password: "123456"
+  },
+  
+  params: {
+    id: "64abc123"    // if route is /api/users/:id
+  },
+  
+  query: {
+    page: "1"         // if URL is /api/projects?page=1
+  }
+}
+
+basically when react 
