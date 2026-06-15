@@ -3,6 +3,7 @@ import mongoose from "mongoose"
 import cors from "cors"
 import dotenv from "dotenv";
 import authRoute from "./routes/auth.routes.js"
+import projectRoute from "./routes/project.route.js"
 import connectDb from "./config/db.js";
 
 dotenv.config();
@@ -12,7 +13,8 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use("/api/auth", authRoute)
+app.use("/api/auth", authRoute);
+app.use("/api/projects", projectRoute);
 
 app.get("/", (req, res) => {
     res.json({ message: "Pathshala backend is running" })

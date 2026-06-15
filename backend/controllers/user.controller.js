@@ -100,7 +100,7 @@ export const login = async (req, res) => {
 // GET CURRENT USER (protected route)
 export const getMe = async (req, res) => {
     try{
-        const user = await User.findById(req.user_id).select("-password");
+        const user = await User.findById(req.user._id).select("-password");
         return res.status(200).json({ user });
     }catch(error){
         return res.status(500).json({ message: "Server error", error: error.message });
